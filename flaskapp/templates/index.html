@@ -1,0 +1,16 @@
+{% include "header.html" %}
+
+    <div class="text" style="margin-left: auto">
+      <h1 class="heading">WELCOME</h1>
+      <h3>Siesta- Your personal Drowsiness manager:)</h3>
+      {% if current_user.is_authenticated %}
+
+          {% else %}
+      <button class="btn">
+          <a href="{{url_for('users.login')}}"><span>LOGIN</span></a>
+      </button>
+      <p>Not a member? <a href="{{url_for('users.signup')}}">Signup now</a></p>
+          {% endif %}
+    </div>
+
+{% include "footer.html" %}

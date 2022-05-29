@@ -1,0 +1,9 @@
+{% include 'header.html' %}
+<div class="text-content detect" style="margin-top: 5%">
+  <h2 style="font-weight: bolder">DROWSINESS DETECTION</h2>
+  {% block content %}
+  <img src="{{ url_for('main.video_detect') }}" alt="The recording will start soon. Please Wait...">
+  <form method="post"><button type="submit" class="btn btn-primary my-3" style="width: 100%" >CLOSE RECORDING</button></form>
+  {% endblock %}
+</div>
+{% include 'footer.html' %}

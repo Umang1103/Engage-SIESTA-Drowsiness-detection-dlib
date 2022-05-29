@@ -1,0 +1,21 @@
+{% include 'header.html' %}
+<div class="text-content contact">
+  <h2 style="font-weight: bolder">AIM AND THE PURPOSE WE SERVE</h2>
+  <p>
+    This web-application aims at improving the quality of your working hours
+    by alarming you when you're drowsy.
+  </p>
+  <p>
+    You're constantly monitored during your screen-time. The moment you yawn or
+    nod-off an alarm goes off and a sms is sent to you at your
+    registered mobile no.
+  </p>
+  <p>
+  <h3 style="font-weight: bold; letter-spacing:1px">Special Feature(Care)<span style="color: yellow">😊</span></h3>
+  <p>
+    If you nod-off for more than 30 seconds, your system goes in hibernate mode so that
+    you can take a break and get a good nap.
+  </p>
+  <p>Try now! <a href="{{url_for('main.detect')}}" style="font-weight: bold">Click here</a></p>
+</div>
+{% include 'footer.html' %}

@@ -1,0 +1,12 @@
+{% include 'header.html' %}
+<div class="text-content detect">
+  <h2 style="font-weight: bolder">DROWSINESS DETECTION</h2>
+  <li>Login.</li>
+  <li>Press 'Start Recording' to start the recording.</li>
+  <li>Press 'Close Recording' to close the camera.</li>
+  {% if not current_user.is_authenticated %}
+  <p>Not a member? <a href="{{url_for('users.signup')}}">Signup now</a></p>
+  {% endif %}
+  <form method="post"><button type="submit" class="btn btn-primary my-3" style="width: 100%" >START RECORDING</button></form>
+</div>
+{% include 'footer.html' %}

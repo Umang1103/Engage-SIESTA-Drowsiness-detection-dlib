@@ -1,0 +1,58 @@
+{% include 'header.html' %}
+<div class="text-content detect" style="margin-top: 8%">
+  <h2 style="font-weight: bolder">ACCOUNT</h2>
+  <form class="login" method="post" action="" enctype="multipart/form-data">
+        <img class="rounded-circle account-img" src="{{ image_file }}">
+        {{ form.hidden_tag() }}
+        <div class="form-group my-10">
+            {{ form.username.label(class="from-label-account") }}
+            {% if form.username.errors %}
+                    {{ form.username(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.username.errors %}
+                            <span class="error">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+            {{ form.username(class="form-control") }}
+            {% endif %}
+        </div>
+        <div class="form-group my-10">
+            {{ form.contact.label(class="from-label-account") }}
+            {% if form.contact.errors %}
+                    {{ form.contact(class="form-control  is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.contact.errors %}
+                            <span class="error">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+            {{ form.contact(class="form-control") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.email.label(class="from-label-account") }}
+            {% if form.email.errors %}
+                    {{ form.email(class="form-control  is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                            <span class="error">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+            {{ form.email(class="form-control") }}
+            {% endif %}
+        </div>
+        <div class="form-group my-10">
+            {{ form.picture.label(class="from-label-account") }}</br>
+            {{ form.picture(class="form-control-file") }}
+            {% if form.picture.errors %}
+                {% for error in form.username.errors %}
+                    <span class="error text-danger">{{ error }}</span></br>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <span>{{ form.submit(class="btn btn-primary my-3 form-btn") }}</span>
+    </form>
+</div>
+{% include 'footer.html' %}

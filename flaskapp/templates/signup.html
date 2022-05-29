@@ -1,0 +1,61 @@
+{% include 'header.html' %}
+	<div class="text-content">
+	<form class="login" method="post" action="">
+			{{ form.hidden_tag() }}
+			<div class="form-group my-10">
+				{{ form.username.label(class="form-label") }}
+				{% if form.username.errors %}
+                        {{ form.username(class="form-control is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span class="error">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+				{{ form.username(class="form-control") }}
+				{% endif %}
+			</div>
+			<div class="form-group my-10">
+				{{ form.contact.label(class="form-label") }}
+				{% if form.contact.errors %}
+                        {{ form.contact(class="form-control  is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.contact.errors %}
+                                <span class="error">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+				{{ form.contact(class="form-control") }}
+				{% endif %}
+			</div>
+			<div class="form-group">
+				{{ form.email.label(class="form-label") }}
+				{% if form.email.errors %}
+                        {{ form.email(class="form-control  is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span class="error">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+				{{ form.email(class="form-control") }}
+				{% endif %}
+			</div>
+			<div class="form-group">
+				{{ form.password.label(class="form-label") }}
+				{% if form.password.errors %}
+                        {{ form.password(class="form-control  is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span class="error">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+				{{ form.password(class="form-control") }}
+				{% endif %}
+			</div>
+			<span>{{ form.submit(class="btn btn-primary my-3 form-btn") }}</span>
+			<p>Already a member? <a href="{{url_for('users.login')}}">Login</a></p>
+		</form>
+	</div>
+{% include 'footer.html' %}

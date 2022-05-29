@@ -1,0 +1,23 @@
+{% include 'header.html' %}
+	<div class="text-content">
+	<h2 style="font-weight: bolder">REQUEST PASSWORD CHANGE</h2>
+	  <form class="login" method="post" action="">
+		{{ form.hidden_tag() }}
+		<div class="form-group my-10">
+			{{ form.email.label(class="form-label") }}
+			{% if form.email.errors %}
+				{{ form.email(class="form-control  is-invalid") }}
+				<div class="invalid-feedback">
+					{% for error in form.email.errors %}
+						<span class="error">{{ error }}</span>
+					{% endfor %}
+				</div>
+			{% else %}
+			{{ form.email(class="form-control") }}
+			{% endif %}
+		</div>
+
+		<span>{{ form.submit(class="btn btn-primary my-3 form-btn") }}</span>
+		</form>
+	</div>
+{% include 'footer.html' %}
