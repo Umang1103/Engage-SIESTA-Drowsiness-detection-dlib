@@ -12,7 +12,8 @@ This project was developed as a submission for the Microsoft Engage'22.
 ## Getting Started
 - Clone the repository. Create a virtual env using the command `python3 -m venv /path/to/new/virtual/environment`.
 - Refer to the [documentation](https://docs.python.org/3/library/venv.html) for more details.
-- Install the requirements using the command `pip install requirements.txt`.
+- Install the requirements using the command `pip install -r requirements.txt`.
+- Install dlib using the command `pip install .\flaskapp\models_dlib\dlib-19.19.0-cp38-cp38-win_amd64.whl`.
 - Download *shape_predictor_68_face_landmarks.dat* from the [link](https://github.com/tzutalin/dlib-android/blob/master/data/shape_predictor_68_face_landmarks.dat) and add it to the models_dlib directory.
 
 ## Working
